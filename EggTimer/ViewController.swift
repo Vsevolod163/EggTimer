@@ -19,17 +19,14 @@ final class ViewController: UIViewController {
     
     private var hardness = ""
     
-    private var isTimerEnds = true
-    
     private var player: AVAudioPlayer!
     
     private var timer = Timer()
     private var secondsPassed = 0
 
     @IBAction private func hardnessSelected(_ sender: UIButton) {
-        guard isTimerEnds else { return }
         
-        isTimerEnds = false
+        timer.invalidate()
         
         hardness = sender.titleLabel?.text ?? ""
        
@@ -60,7 +57,6 @@ final class ViewController: UIViewController {
         if secondsPassed == readyTime {
             timer.invalidate()
             titleLabel.text = "Done!🥚"
-            isTimerEnds = true
             
             playSound(with: "alarm_sound")
         }
