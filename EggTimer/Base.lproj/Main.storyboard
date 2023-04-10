@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,12 +42,19 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soft_egg" translatesAutoresizingMaskIntoConstraints="NO" id="pXg-uv-uHp">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="210"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbX-hU-47b">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbX-hU-47b">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="210"/>
-                                                <state key="normal" title="Button"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Soft">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <buttonConfiguration key="configuration" style="plain" title="Soft">
+                                                    <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahu-tV-z0Z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -70,12 +78,16 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medium_egg" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-dw-t7b">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="210"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPO-za-FHg">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPO-za-FHg">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="210"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Medium">
+                                                    <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnW-PY-vtF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -99,12 +111,16 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hard_egg" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-4P-YzO">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="210"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-os-P2f">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-os-P2f">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="210"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Hard">
+                                                    <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="hardnessSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="su9-td-9bS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -124,29 +140,54 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hqc-Xd-FRn">
+                                <rect key="frame" x="16" y="579" width="398" height="319"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JA8-d3-8Hg">
+                                        <rect key="frame" x="0.0" y="157.66666666666663" width="398" height="4"/>
+                                        <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                    </progressView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JA8-d3-8Hg" firstAttribute="centerY" secondItem="Hqc-Xd-FRn" secondAttribute="centerY" id="38b-0v-Ptd"/>
+                                    <constraint firstItem="JA8-d3-8Hg" firstAttribute="leading" secondItem="Hqc-Xd-FRn" secondAttribute="leading" id="5lb-6d-eoc"/>
+                                    <constraint firstAttribute="trailing" secondItem="JA8-d3-8Hg" secondAttribute="trailing" id="t1b-fa-7VK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.091130562941174137" green="0.20988011187165112" blue="0.39724010678391963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="23f-r5-zUY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1Fj-Qv-jEg"/>
                             <constraint firstItem="Goz-jF-KGY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.225352" id="4UR-Gp-jDt"/>
+                            <constraint firstItem="Hqc-Xd-FRn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6te-gw-Lmm"/>
                             <constraint firstItem="23f-r5-zUY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7lh-kT-nxz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hqc-Xd-FRn" secondAttribute="trailing" constant="16" id="GD4-ZJ-dbt"/>
+                            <constraint firstItem="Hqc-Xd-FRn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="MuE-hc-weF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="23f-r5-zUY" secondAttribute="trailing" constant="16" id="PNF-pO-Dyd"/>
                             <constraint firstItem="Goz-jF-KGY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Qfo-Ly-CZn"/>
                             <constraint firstItem="Goz-jF-KGY" firstAttribute="top" secondItem="23f-r5-zUY" secondAttribute="bottom" id="tVM-kZ-scd"/>
+                            <constraint firstItem="Hqc-Xd-FRn" firstAttribute="top" secondItem="Goz-jF-KGY" secondAttribute="bottom" constant="8" symbolic="YES" id="ubl-RS-ba3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Goz-jF-KGY" secondAttribute="trailing" constant="16" id="yWR-iL-ByX"/>
                             <constraint firstItem="Goz-jF-KGY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zUR-Y9-fKi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timerProgressView" destination="JA8-d3-8Hg" id="4Cq-ju-ezd"/>
+                        <outlet property="titleLabel" destination="BVL-11-I6P" id="KVz-6M-shH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566.25" y="62.323943661971832"/>
+            <point key="canvasLocation" x="565.11627906976742" y="61.802575107296143"/>
         </scene>
     </scenes>
     <resources>
         <image name="hard_egg" width="287.66665649414062" height="366.33334350585938"/>
         <image name="medium_egg" width="288" height="363.33334350585938"/>
         <image name="soft_egg" width="287" height="365.33334350585938"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
